@@ -1,4 +1,4 @@
-<nav class="sticky top-0 z-50 backdrop-blur-xl border-b">
+<nav class="sticky top-0 z-50 backdrop-blur-sm border-b">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
     <a routerLink="/" class="group flex items-center gap-3">
       <div
@@ -28,7 +28,7 @@
         class="rounded-xl border p-3 text-neutral-500 transition hover:border-[#262626] hover:bg-[#161616] hover:text-orange-500">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
-      <a routerLink="/blog" class="btn-main text-sm">ابدأ القراءة</a>
+      <a routerLink="/blog" class="main-btn text-sm">ابدأ القراءة</a>
     </div>
 
     <button (click)="toggleMenu()"
@@ -47,7 +47,7 @@
         {{ link.label }}
       </a>
       }
-      <a routerLink="/blog" (click)="isMenuOpen = false" class="btn-main text-sm">ابدأ القراءة</a>
+      <a routerLink="/blog" (click)="isMenuOpen = false" class="main-btn text-sm">ابدأ القراءة</a>
     </div>
   </div>
 </nav>

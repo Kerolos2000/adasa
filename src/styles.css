@@ -35,7 +35,24 @@
   }
 }
 
-.btn-main {
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* Hide router-outlet element to prevent layout issues */
+router-outlet {
+  display: none;
+}
+
+.main-btn {
   display: inline-flex;
   cursor: pointer;
   color: white;
@@ -49,14 +66,13 @@
   font-weight: 500;
   text-decoration: none;
 }
-
-.btn-main:hover {
+.main-btn:hover {
   color: white;
   background: linear-gradient(135deg, #ea580c, #f97316);
   transform: translateY(-1px);
 }
 
-.btn-secondary {
+.secondary-btn {
   display: inline-flex;
   cursor: pointer;
   color: white;
@@ -71,15 +87,23 @@
   font-weight: 500;
   text-decoration: none;
 }
-
-.btn-secondary:hover {
+.secondary-btn:hover {
   color: #f97316;
-  background: rgba(249, 115, 22, 0.1);
+  background: #f973161a;
   border-color: #f97316;
   transform: translateY(-1px);
 }
 
-/* Hide router-outlet element to prevent layout issues */
-router-outlet {
-  display: none;
+.glass-card {
+  border-radius: var(--radius-3xl);
+  backdrop-filter: blur(2px);
+  background: #ffffff09;
+  border: 1px solid #ffffff1a;
+}
+
+.gradient-text {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
