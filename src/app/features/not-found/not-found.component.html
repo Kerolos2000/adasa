@@ -1,4 +1,4 @@
-<div class="relative overflow-hidden h-full flex flex-col">
+<div class="relative overflow-hidden h-full flex flex-col pb-4">
   <app-background-grid />
 
   <main class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4">
@@ -15,28 +15,28 @@
       <span class="absolute bottom-1 -left-3 w-2 h-2 bg-yellow-400 rounded-full"></span>
     </div>
 
-    <h2 class="text-xl font-bold mb-2">عفوًا! الصفحة غير موجودة</h2>
+    <h2 class="text-4xl font-bold mb-2">عفوًا! الصفحة غير موجودة</h2>
     <p class="text-gray-400 max-w-md mb-8">
       الصفحة التي تبحث عنها غير موجودة أو تم نقلها، دعنا نعيدك إلى المسار الصحيح.
     </p>
 
     <div class="flex gap-4 mb-10">
-      <button class="btn-main">
+      <a routerLink="/" class="btn-main">
         <i class="fa-solid fa-house"></i>
         الذهاب للرئيسية
-      </button>
-      <button class="btn-secondary">
+      </a>
+      <a routerLink="/blog" class="btn-secondary">
         <i class="fa-regular fa-file-lines"></i>
         تصفح المقالات
-      </button>
+      </a>
     </div>
 
     <p class="text-gray-600 max-w-md mb-2">قد تجد هذه مفيدة:</p>
 
     <div class="flex gap-6 text-sm text-gray-500">
-      <a href="#" class="hover:text-orange-500 transition">المدونة</a>
-      <a href="#" class="hover:text-orange-500 transition">من نحن</a>
-      <a href="#" class="hover:text-orange-500 transition">الخصوصية</a>
+      <a routerLink="/home" class="hover:text-orange-500 transition">الرئيسية</a>
+      <a routerLink="/blog" class="hover:text-orange-500 transition">المدونة</a>
+      <a routerLink="/about" class="hover:text-orange-500 transition">من نحن</a>
     </div>
   </main>
 </div>

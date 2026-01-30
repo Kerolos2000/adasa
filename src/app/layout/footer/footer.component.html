@@ -1,0 +1,107 @@
+<footer class="relative bg-[#0a0a0a] text-neutral-300 overflow-hidden border-t border-[#262626]">
+
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <section>
+        <a routerLink="/" class="group flex items-center gap-3 mb-6">
+          <span
+            class="w-11 h-11 bg-linear-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-[#f973164d_0_4px_20px] text-white font-bold text-xl">
+            ع
+          </span>
+          <span class="text-xl font-bold text-white">عدسة</span>
+        </a>
+
+        <p class="text-sm text-neutral-500 mb-6 leading-relaxed">
+          مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير مهاراتكم.
+        </p>
+        <div class="flex gap-2">
+          @for (s of socials; track s.label) {
+          <a [href]="s.url" target="_blank" [attr.aria-label]="s.label" class="w-10 h-10 bg-[#161616] border border-[#262626] rounded-xl flex items-center justify-center text-neutral-500 
+           transition-transform duration-300 ease-in-out
+           hover:text-white hover:bg-orange-500 hover:border-orange-500
+           hover:scale-105 hover:-translate-y-1">
+            <i class="fa-brands" [class]="s.icon"></i>
+          </a>
+          }
+        </div>
+
+      </section>
+
+      <section class="space-y-6">
+        <h3 class="text-white font-semibold flex items-center gap-2">
+          <span class="w-8 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 rounded-full"></span>
+          استكشف
+        </h3>
+        <ul class="space-y-4">
+          @for (c of exploreLinks; track c.path) {
+          <li>
+            <a [routerLink]="c.path"
+              class="group flex items-center gap-2 text-sm text-neutral-500 hover:text-orange-500 transition-colors duration-300">
+              <i
+                class="fa-solid fa-angle-left text-orange-500 opacity-0 -mr-4 group-hover:opacity-100 group-hover:mr-0 transition-all duration-300"></i>
+              {{ c.label }}
+            </a>
+          </li>
+          }
+        </ul>
+      </section>
+
+      <section class="space-y-6">
+        <h3 class="text-white font-semibold flex items-center gap-2">
+          <span class="w-8 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 rounded-full"></span>
+          التصنيفات
+        </h3>
+        <ul class="space-y-4">
+          @for (c of categories; track c.value) {
+          <li>
+            <a [routerLink]="'/blog'" [queryParams]="{ category: c.value }"
+              class="group flex items-center gap-2 text-sm text-neutral-500 hover:text-orange-500 transition-colors duration-300">
+              <i
+                class="fa-solid fa-angle-left text-orange-500 opacity-0 -mr-4 group-hover:opacity-100 group-hover:mr-0 transition-all duration-300"></i>
+              {{ c.label }}
+            </a>
+          </li>
+          }
+        </ul>
+      </section>
+
+      <section class="space-y-6">
+        <h3 class="text-white font-semibold flex items-center gap-2">
+          <span class="w-8 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 rounded-full"></span>
+          ابقى على اطلاع
+        </h3>
+        <p class="text-sm text-neutral-500">
+          اشترك للحصول على أحدث المقالات والتحديثات.
+        </p>
+        <form class="space-y-3">
+          <input type="email" placeholder="أدخل بريدك الإلكتروني"
+            class="w-full px-4 py-3 bg-[#161616] border border-[#262626] rounded-xl text-sm text-white placeholder-neutral-600 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition">
+          <button class="w-full btn-main text-sm">اشترك</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <div class="border-t border-[#262626]">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-neutral-600">
+        © {{ fullYear }} عدسة. صنع بكل <i class="fa-solid fa-heart text-orange-500"></i> جميع الحقوق
+        محفوظة.
+      </p>
+      <div class="flex gap-6">
+        @for (b of bottomLinks; track b.path) {
+        <a [routerLink]="b.path" class="text-sm text-neutral-600 hover:text-orange-500 transition-colors duration-300">
+          {{ b.label }}
+        </a>
+        }
+      </div>
+    </div>
+  </div>
+</footer>
