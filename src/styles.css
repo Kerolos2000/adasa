@@ -107,3 +107,9 @@ router-outlet {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+.title-section {
+  font-size: var(--text-6xl);
+  line-height: var(--tw-leading, var(--text-6xl--line-height));
+  font-weight: 900;
+}
