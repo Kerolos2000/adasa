@@ -1,0 +1,53 @@
+<nav class="sticky top-0 z-50 backdrop-blur-xl border-b">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
+    <a routerLink="/" class="group flex items-center gap-3">
+      <div
+        class="relative h-12 w-12 overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-105">
+        <img src="/logo.png" alt="Photography Logo" class="h-full w-full object-cover" />
+      </div>
+      <div class="flex flex-col">
+        <span
+          class="bg-linear-to-r from-white to-neutral-300 bg-clip-text text-xl font-bold text-transparent">عدسة</span>
+        <span class="hidden sm:block text-xs tracking-wide text-orange-400/80">عالم التصوير الفوتوغرافي</span>
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-3">
+      <div class="flex items-center rounded-full border border-[#262626] bg-[#161616] p-1.5">
+        @for (link of navLinks; track link.path) {
+        <a [routerLink]="link.path" routerLinkActive="bg-linear-to-r from-orange-500 to-orange-600 text-white"
+          class="rounded-full px-5 py-2.5 text-sm font-medium text-neutral-400 transition-all duration-300 hover:text-white">
+          {{ link.label }}
+        </a>
+        }
+      </div>
+    </div>
+
+    <div class="hidden md:flex items-center gap-3">
+      <button
+        class="rounded-xl border p-3 text-neutral-500 transition hover:border-[#262626] hover:bg-[#161616] hover:text-orange-500">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <a routerLink="/blog" class="btn-main text-sm">ابدأ القراءة</a>
+    </div>
+
+    <button (click)="toggleMenu()"
+      class="md:hidden rounded-xl border p-3 text-neutral-400 transition hover:border-[#262626] hover:bg-[#161616] hover:text-white">
+      <i class="fa-solid" [class.fa-bars]="!isMenuOpen" [class.fa-xmark]="isMenuOpen"></i>
+    </button>
+  </div>
+
+  <div class="md:hidden overflow-hidden transition-all duration-300 ease-in-out" [class.max-h-96]="isMenuOpen"
+    [class.opacity-100]="isMenuOpen" [class.max-h-0]="!isMenuOpen" [class.opacity-0]="!isMenuOpen">
+    <div class="rounded-2xl border border-[#262626] bg-[#161616] p-4 backdrop-blur-xl flex flex-col space-y-1">
+      @for (link of navLinks; track link.path) {
+      <a [routerLink]="link.path" routerLinkActive="border border-orange-500/30 bg-orange-500/10 text-orange-500"
+        (click)="isMenuOpen = false"
+        class="rounded-xl px-4 py-3 text-sm font-medium text-neutral-400 transition hover:bg-[#1a1a1a] hover:text-white">
+        {{ link.label }}
+      </a>
+      }
+      <a routerLink="/blog" (click)="isMenuOpen = false" class="btn-main text-sm">ابدأ القراءة</a>
+    </div>
+  </div>
+</nav>
