@@ -1,2 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
 @import 'tailwindcss';
+
+.btn-main {
+  cursor: pointer;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 32px;
+  padding-block: 16px;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  border-radius: 50px;
+}
