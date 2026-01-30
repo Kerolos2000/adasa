@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BackgroundGridComponent } from '../../../../shared/components/background-grid/background-grid.component';
 import { SectionLabelComponent } from '../../../../shared/components/section-label/section-label.component';
 
-interface HeroButton {
+export interface HeroButton {
   label: string;
   icon?: string;
   href: string;
@@ -10,7 +10,7 @@ interface HeroButton {
   rotate?: boolean;
 }
 
-interface HeroStat {
+export interface HeroStat {
   icon: string;
   value: string;
   label: string;
