@@ -10,7 +10,7 @@
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       @for (c of categories; track c.title) {
-      <a class="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-orange-500/30"
+      <a class="group relative block p-6 rounded-2xl bg-main border border-border overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-orange-500/30"
         [routerLink]="['/blog']" [queryParams]="{ category: c.title }" [style.animationDelay.ms]="c.delay">
         <div
           class="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 from-orange-600 to-orange-400">
@@ -32,7 +32,7 @@
           </p>
 
           <div
-            class="absolute top-6 left-6 w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bg-white/20">
+            class="absolute top-6 left-6 w-8 h-8 rounded-full bg-border flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bg-white/20">
             <i class="fa-solid fa-arrow-left text-sm text-white"></i>
           </div>
         </div>

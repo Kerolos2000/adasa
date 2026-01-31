@@ -1,4 +1,4 @@
-<footer class="relative bg-[#0a0a0a] text-neutral-300 overflow-hidden border-t border-[#262626]">
+<footer class="relative bg-background text-neutral-300 overflow-hidden border-t border-border">
 
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
@@ -22,7 +22,7 @@
         </p>
         <div class="flex gap-2">
           @for (s of socials; track s.label) {
-          <a [href]="s.url" target="_blank" [attr.aria-label]="s.label" class="w-10 h-10 bg-[#161616] border border-[#262626] rounded-xl flex items-center justify-center text-neutral-500 
+          <a [href]="s.url" target="_blank" [attr.aria-label]="s.label" class="w-10 h-10 bg-main border border-border rounded-xl flex items-center justify-center text-neutral-500 
            transition-transform duration-300 ease-in-out
            hover:text-white hover:bg-orange-500 hover:border-orange-500
            hover:scale-105 hover:-translate-y-1">
@@ -81,14 +81,14 @@
         </p>
         <form class="space-y-3">
           <input type="email" placeholder="أدخل بريدك الإلكتروني"
-            class="w-full px-4 py-3 bg-[#161616] border border-[#262626] rounded-xl text-sm text-white placeholder-neutral-600 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition">
+            class="w-full px-4 py-3 bg-main border border-border rounded-xl text-sm text-white placeholder-neutral-600 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition">
           <button class="w-full main-btn text-sm">اشترك</button>
         </form>
       </section>
     </div>
   </div>
 
-  <div class="border-t border-[#262626]">
+  <div class="border-t border-border">
     <div
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-sm text-neutral-600">

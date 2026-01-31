@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { BlogListComponent } from '../sections/blog-list/blog-list.component';
+import { BlogListSectionComponent } from '../sections/blog-list-section/blog-list-section.component';
 import { FilterSectionComponent } from '../sections/filter-section/filter-section.component';
 import { HeroSectionComponent } from '../sections/hero-section/hero-section.component';
 
 @Component({
   selector: 'app-blog',
-  imports: [HeroSectionComponent, FilterSectionComponent, BlogListComponent],
+  imports: [HeroSectionComponent, FilterSectionComponent, BlogListSectionComponent],
   templateUrl: './blog.component.html',
 })
 export class BlogComponent {}

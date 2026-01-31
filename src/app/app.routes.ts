@@ -14,12 +14,12 @@ export const routes: Routes = [
   {
     path: 'blog',
     loadComponent: () => import('./features/blog/page/blog.component').then((m) => m.BlogComponent),
-    title: 'المدونة - عدسة',
+    title: 'عدسة - المدونة',
   },
   {
     path: 'about',
     loadComponent: () => import('./features/about/about.component').then((m) => m.AboutComponent),
-    title: 'من نحن - عدسة',
+    title: 'عدسة - من نحن',
   },
   {
     path: '**',

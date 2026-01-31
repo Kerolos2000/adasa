@@ -1,17 +1,27 @@
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-36.5">
-  <div class="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-neutral-400 text-sm md:text-base">
-      عرض <span class="font-bold text-white">{{ filteredPosts.length }}</span> مقالات
-      @if (selectedCategory !== 'الكل') {
-      <span> في <span class="font-bold text-orange-500">{{ selectedCategory }}</span></span>
-      }
-      @if (searchQuery) {
-      <span> لـ "<span class="font-bold text-white">{{ searchQuery }}</span>"</span>
-      }
-    </p>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="mb-8 flex items-center justify-between gap-4">
 
-    <div class="flex items-center gap-4">
-      <div class="flex items-center bg-[#161616] border border-[#262626] rounded-xl p-1">
+    <div class="flex-1 min-w-0">
+      <p class="text-neutral-400 text-sm md:text-base flex flex-wrap gap-1">
+        <span>عرض</span>
+        <span class="font-bold text-white">{{ filteredPosts.length }}</span>
+        <span>مقالات</span>
+
+        @if (selectedCategory !== 'الكل') {
+        <span>في</span>
+        <span class="font-bold text-orange-500">{{ selectedCategory }}</span>
+        }
+
+        @if (searchQuery) {
+        <span>لـ</span>
+        <span class="font-bold text-white break-all line-clamp-1">"{{ searchQuery }}"</span>
+        }
+      </p>
+    </div>
+
+
+    <div class="flex items-center gap-4 shrink-0">
+      <div class="flex items-center bg-main border border-border rounded-xl p-1">
         <button (click)="toggleView('grid')" class="p-2 rounded-lg transition-all duration-300"
           [class.bg-orange-500]="viewMode === 'grid'" [class.text-white]="viewMode === 'grid'"
           [class.text-neutral-400]="viewMode !== 'grid'" title="عرض شبكي">
@@ -23,14 +33,6 @@
           <i class="fa-solid fa-list w-5 h-5 flex items-center justify-center"></i>
         </button>
       </div>
-
-      @if (selectedCategory !== 'الكل' || searchQuery) {
-      <button (click)="clearFilters()"
-        class="text-sm text-neutral-500 hover:text-orange-500 flex items-center gap-1.5 transition-colors">
-        <i class="fa-solid fa-xmark"></i>
-        مسح الفلاتر
-      </button>
-      }
     </div>
   </div>
 
@@ -42,8 +44,7 @@
     <app-blog-post-card [post]="post" [index]="$index" [viewMode]="viewMode" />
     } @empty {
     <div class="col-span-full py-20 text-center">
-      <div
-        class="w-20 h-20 bg-[#161616] rounded-3xl flex items-center justify-center mx-auto mb-6 border border-[#262626]">
+      <div class="w-20 h-20 bg-main rounded-3xl flex items-center justify-center mx-auto mb-6 border border-border">
         <i class="fa-solid fa-magnifying-glass text-3xl text-neutral-600"></i>
       </div>
       <h3 class="text-xl font-bold text-white mb-2">عذراً، لم نجد أي مقالات</h3>
@@ -56,7 +57,7 @@
   <div class="mt-16 flex flex-col items-center gap-6">
     <div class="flex justify-center items-center gap-2">
       <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1"
-        class="p-3 rounded-xl border transition-all duration-300 bg-[#161616] border-[#262626] text-white hover:border-orange-500/50 hover:bg-[#1a1a1a] disabled:bg-[#0a0a0a] disabled:text-neutral-600 disabled:cursor-not-allowed">
+        class="p-3 rounded-xl border transition-all duration-300 bg-main border-border text-white hover:border-orange-500/50 hover:bg-hover disabled:bg-background disabled:text-neutral-600 disabled:cursor-not-allowed">
         <i class="fa-solid fa-chevron-right w-5 h-5 flex items-center justify-center"></i>
       </button>
       <div class="flex items-center gap-1.5">
@@ -64,14 +65,14 @@
         <button (click)="goToPage(page)"
           [class]="currentPage === page 
                 ? 'min-w-11 h-11 rounded-xl text-sm font-bold bg-linear-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/20' 
-                : 'min-w-11 h-11 rounded-xl text-sm font-medium bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/50 hover:text-white transition-all duration-300'">
+                : 'min-w-11 h-11 rounded-xl text-sm font-medium bg-main text-neutral-400 border border-border hover:border-orange-500/50 hover:text-white transition-all duration-300'">
           {{ page }}
         </button>
         }
       </div>
 
       <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages"
-        class="p-3 rounded-xl border transition-all duration-300 bg-[#161616] border-[#262626] text-white hover:border-orange-500/50 hover:bg-[#1a1a1a] disabled:bg-[#0a0a0a] disabled:text-neutral-600 disabled:cursor-not-allowed">
+        class="p-3 rounded-xl border transition-all duration-300 bg-main border-border text-white hover:border-orange-500/50 hover:bg-hover disabled:bg-background disabled:text-neutral-600 disabled:cursor-not-allowed">
         <i class="fa-solid fa-chevron-left w-5 h-5 flex items-center justify-center"></i>
       </button>
     </div>

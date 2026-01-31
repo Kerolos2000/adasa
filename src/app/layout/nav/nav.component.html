@@ -1,4 +1,4 @@
-<nav class="sticky top-0 z-50 bg-[#16161650] backdrop-blur-md border-b">
+<nav class="sticky top-0 z-20 bg-main/50 backdrop-blur-md border-b">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
     <a routerLink="/" class="group flex items-center gap-3">
       <div
@@ -13,7 +13,7 @@
     </a>
 
     <div class="hidden md:flex items-center gap-3">
-      <div class="flex items-center rounded-full border border-[#262626] bg-[#161616] p-1.5">
+      <div class="flex items-center rounded-full border border-border bg-main p-1.5">
         @for (link of navLinks; track link.path) {
         <a [routerLink]="link.path" routerLinkActive="bg-linear-to-r from-orange-500 to-orange-600 text-white"
           class="rounded-full px-5 py-2.5 text-sm font-medium text-neutral-400 transition-all duration-300 hover:text-white">
@@ -25,25 +25,26 @@
 
     <div class="hidden md:flex items-center gap-3">
       <button
-        class="rounded-xl border p-3 text-neutral-500 transition hover:border-[#262626] hover:bg-[#161616] hover:text-orange-500">
+        class="rounded-xl border p-3 text-neutral-500 transition hover:border-border hover:bg-main hover:text-orange-500">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
       <a routerLink="/blog" class="main-btn text-sm">ابدأ القراءة</a>
     </div>
 
     <button (click)="toggleMenu()"
-      class="md:hidden rounded-xl border p-3 text-neutral-400 transition hover:border-[#262626] hover:bg-[#161616] hover:text-white">
+      class="md:hidden rounded-xl border p-3 text-neutral-400 transition hover:border-border hover:bg-main hover:text-white">
       <i class="fa-solid" [class.fa-bars]="!isMenuOpen" [class.fa-xmark]="isMenuOpen"></i>
     </button>
   </div>
 
-  <div class="md:hidden overflow-hidden transition-all duration-300 ease-in-out" [class.max-h-96]="isMenuOpen"
-    [class.opacity-100]="isMenuOpen" [class.max-h-0]="!isMenuOpen" [class.opacity-0]="!isMenuOpen">
-    <div class="rounded-2xl border border-[#262626] bg-[#161616] p-4 backdrop-blur-xl flex flex-col space-y-1">
+  <div class="absolute top-full left-0 right-0 px-4 md:hidden overflow-hidden transition-all duration-300 ease-in-out"
+    [class.max-h-96]="isMenuOpen" [class.opacity-100]="isMenuOpen" [class.max-h-0]="!isMenuOpen"
+    [class.opacity-0]="!isMenuOpen">
+    <div class="rounded-2xl border border-border bg-main p-4 backdrop-blur-md flex flex-col space-y-1 mt-2">
       @for (link of navLinks; track link.path) {
       <a [routerLink]="link.path" routerLinkActive="border border-orange-500/30 bg-orange-500/10 text-orange-500"
         (click)="isMenuOpen = false"
-        class="rounded-xl px-4 py-3 text-sm font-medium text-neutral-400 transition hover:bg-[#1a1a1a] hover:text-white">
+        class="rounded-xl px-4 py-3 text-sm font-medium text-neutral-400 transition hover:bg-hover hover:text-white">
         {{ link.label }}
       </a>
       }

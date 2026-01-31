@@ -1,8 +1,7 @@
 <article
-  class="group relative bg-[#111111] rounded-2xl overflow-hidden border border-neutral-800/50 hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-2"
+  class="group relative h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-2"
   [class.flex]="viewMode === 'list'">
-
-  <a [routerLink]="['/blog', post.slug]" class="block w-full" [class.flex]="viewMode === 'list'">
+  <a [routerLink]="['/blog', post.slug]" class="inline-flex flex-col w-full h-full" [class.flex]="viewMode === 'list'">
     <div class="relative overflow-hidden" [class.h-250px]="viewMode === 'grid'" [class.w-full]="viewMode === 'grid'"
       [class.md:w-72]="viewMode === 'list'" [class.h-48]="viewMode === 'list'">
       <img [src]="post.image" [alt]="post.title"
@@ -38,7 +37,7 @@
         {{ post.excerpt }}
       </p>
 
-      <div class="flex items-center justify-between pt-5 border-t border-neutral-800/80 mt-auto">
+      <div class="flex items-center justify-between pt-5 border-t border-border mt-auto">
         <div class="flex items-center gap-3">
           <img [src]="post.author.avatar" [alt]="post.author.name"
             class="w-10 h-10 rounded-full object-cover ring-2 ring-neutral-800 group-hover:ring-orange-500/30 transition-all">

@@ -6,11 +6,11 @@ import { Post } from '../../../../core/models/post.model';
 import { BlogPostCardComponent } from '../../../../shared/components/blog-post-card/blog-post-card.component';
 
 @Component({
-  selector: 'app-blog-list',
+  selector: 'app-blog-list-section',
   imports: [CommonModule, BlogPostCardComponent],
-  templateUrl: './blog-list.component.html',
+  templateUrl: './blog-list-section.component.html',
 })
-export class BlogListComponent implements OnInit {
+export class BlogListSectionComponent implements OnInit {
   allPosts: Post[] = BLOG_DATA.posts;
   selectedCategory = 'الكل';
   searchQuery = '';

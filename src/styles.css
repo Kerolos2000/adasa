@@ -2,21 +2,27 @@
 @import '@fontsource/tajawal/index.css';
 
 :root {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
+  --bg-deep: #0a0a0a;
+  --bg-main: #161616;
+  --bg-card: #111111;
+  --bg-hover: #1a1a1a;
+  --border: #262626;
+  --foreground: #fafafa;
   --radius: 0.5rem;
   --font-tajawal: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme {
-  --color-background: var(--background);
+  --color-background: var(--bg-deep);
   --color-foreground: var(--foreground);
   --color-border: var(--border);
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
   --font-tajawal: var(--font-tajawal);
+  --color-main: var(--bg-main);
+  --color-card: var(--bg-card);
+  --color-hover: var(--bg-hover);
 }
 
 @layer base {
@@ -27,11 +33,12 @@
   }
 
   body {
-    background-color: var(--background);
+    background-color: var(--bg-deep);
     color: var(--foreground);
     font-family: var(--font-tajawal);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 }
 

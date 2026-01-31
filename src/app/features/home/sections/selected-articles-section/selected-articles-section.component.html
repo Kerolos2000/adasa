@@ -18,7 +18,7 @@
     <div class="space-y-8">
       @for (post of posts; track post.id) {
       <article
-        class="group relative  rounded-3xl overflow-hidden border border-[#262626] hover:border-orange-500/30 transition-all duration-500"
+        class="group relative h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-2"
         [style.animation-delay]="$index * 150 + 'ms'">
         <a class="block" [routerLink]="['/blog', post.slug]" data-discover="true">
           <div class="grid md:grid-cols-2 gap-0">
@@ -39,7 +39,7 @@
               </div>
               }
             </div>
-            <div class="p-8 md:p-10 flex flex-col justify-center bg-[#161616]">
+            <div class="p-8 md:p-10 flex flex-col justify-center bg-main">
               <div class="flex items-center gap-3 mb-4">
                 <span
                   class="px-3 py-1 bg-orange-500/10 text-orange-500 text-xs font-semibold rounded-full border border-orange-500/20">
@@ -61,10 +61,9 @@
                 <div class="flex items-center gap-3">
                   <div class="relative">
                     <img [attr.alt]="post.author.name"
-                      class="w-12 h-12 rounded-full object-cover ring-2 ring-[#262626] shadow-md"
+                      class="w-12 h-12 rounded-full object-cover ring-2 ring-border shadow-md"
                       [src]="post.author.avatar">
-                    <div
-                      class="absolute -bottom-1 -left-1 w-4 h-4 bg-orange-500 rounded-full border-2 border-[#161616]">
+                    <div class="absolute -bottom-1 -left-1 w-4 h-4 bg-orange-500 rounded-full border-2 border-main">
                     </div>
                   </div>
                   <div>
