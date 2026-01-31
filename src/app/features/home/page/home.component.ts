@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CategoriesSectionComponent } from '../sections/categories-section/categories-section.component';
@@ -10,7 +9,6 @@ import { SelectedArticlesSectionComponent } from '../sections/selected-articles-
 @Component({
   selector: 'app-home',
   imports: [
-    CommonModule,
     RouterModule,
     HeroSectionComponent,
     LatestSectionComponent,

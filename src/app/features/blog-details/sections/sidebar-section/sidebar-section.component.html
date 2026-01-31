@@ -1,0 +1,53 @@
+<aside class="order-1 lg:order-2">
+  <div class="lg:sticky lg:top-24 space-y-6">
+    <div class="p-6 bg-card rounded-2xl border border-border">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/30">
+          <i class="fa-solid fa-list text-orange-500"></i>
+        </div>
+        <h3 class="font-bold text-white">محتويات المقال</h3>
+      </div>
+      <nav class="space-y-2">
+        @for (item of toc; track item.id) {
+        <a
+          class="flex items-center gap-3 p-3 rounded-xl text-neutral-400 hover:text-orange-500 hover:bg-orange-500/5 transition-all duration-300 group">
+          <span
+            class="flex items-center justify-center w-6 h-6 bg-hover rounded-lg text-xs font-bold text-neutral-500 group-hover:bg-orange-500/10 group-hover:text-orange-500 transition-colors">
+            {{ $index + 1 }}
+          </span>
+          <span class="text-sm">{{ item.title }}</span>
+        </a>
+        }
+      </nav>
+    </div>
+
+    <div class="p-6 bg-card rounded-2xl border border-border">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="text-center p-4 bg-background rounded-xl">
+          <i class="fa-regular fa-clock text-orange-500 text-xl mb-2"></i>
+          <p class="text-white font-bold">{{ post.readTime }}</p>
+          <p class="text-neutral-500 text-xs">وقت القراءة</p>
+        </div>
+        <div class="text-center p-4 bg-background rounded-xl">
+          <i class="fa-regular fa-calendar text-orange-500 text-xl mb-2"></i>
+          <p class="text-white font-bold text-sm">{{ localizedDate() }}</p>
+          <p class="text-neutral-500 text-xs">تاريخ النشر</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-6 bg-linear-to-br from-orange-500/10 to-yellow-500/5 rounded-2xl border border-orange-500/20">
+      <div class="text-center">
+        <div class="w-14 h-14 bg-orange-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fa-solid fa-envelope text-orange-500 text-xl"></i>
+        </div>
+        <h3 class="font-bold text-white mb-2">لا تفوّت جديدنا</h3>
+        <p class="text-neutral-400 text-sm mb-4">اشترك للحصول على أحدث المقالات</p>
+        <button
+          class="block w-full py-3 bg-orange-500 text-white font-semibold rounded-xl hover:bg-orange-600 transition-colors text-center">
+          تصفح المزيد
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>

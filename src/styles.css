@@ -42,6 +42,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -56,7 +60,7 @@
 
 /* Hide router-outlet element to prevent layout issues */
 router-outlet {
-  display: none;
+  display: contents;
 }
 
 .main-btn {

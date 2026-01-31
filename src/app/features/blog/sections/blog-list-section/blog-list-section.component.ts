@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BLOG_DATA } from '../../../../core/data/posts.data';
@@ -7,7 +6,7 @@ import { BlogPostCardComponent } from '../../../../shared/components/blog-post-c
 
 @Component({
   selector: 'app-blog-list-section',
-  imports: [CommonModule, BlogPostCardComponent],
+  imports: [BlogPostCardComponent],
   templateUrl: './blog-list-section.component.html',
 })
 export class BlogListSectionComponent implements OnInit {
