@@ -13,8 +13,22 @@ export const routes: Routes = [
   },
   {
     path: 'blog',
-    loadComponent: () => import('./features/blog/page/blog.component').then((m) => m.BlogComponent),
-    title: 'عدسة - المدونة',
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./features/blog/page/blog.component').then((m) => m.BlogComponent),
+        title: 'عدسة - المدونة',
+      },
+      {
+        path: ':slug',
+        loadComponent: () =>
+          import('./features/blog-details/page/blog-details.component').then(
+            (m) => m.BlogDetailsComponent,
+          ),
+        title: 'عدسة - تفاصيل المقال',
+      },
+    ],
   },
   {
     path: 'about',
