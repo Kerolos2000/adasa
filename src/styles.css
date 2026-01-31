@@ -113,3 +113,8 @@ router-outlet {
   line-height: var(--tw-leading, var(--text-6xl--line-height));
   font-weight: 900;
 }
+@media (max-width: 768px) {
+  .title-section {
+    font-size: var(--text-4xl);
+  }
+}

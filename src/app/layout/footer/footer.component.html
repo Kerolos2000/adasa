@@ -96,7 +96,7 @@
         محفوظة.
       </p>
       <div class="flex gap-6">
-        @for (b of bottomLinks; track b.path) {
+        @for (b of bottomLinks; track $index) {
         <a [routerLink]="b.path" class="text-sm text-neutral-600 hover:text-orange-500 transition-colors duration-300">
           {{ b.label }}
         </a>
