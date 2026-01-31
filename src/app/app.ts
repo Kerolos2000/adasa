@@ -7,7 +7,6 @@ import { NavComponent } from './layout/nav/nav.component';
   selector: 'app-root',
   imports: [RouterOutlet, NavComponent, FooterComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('adasa');

@@ -38,10 +38,10 @@ export class FooterComponent {
   ];
 
   categories: Category[] = [
-    { label: 'إضاءة', value: 'lighting' },
-    { label: 'بورتريه', value: 'portrait' },
-    { label: 'مناظر طبيعية', value: 'nature' },
-    { label: 'تقنيات', value: 'techniques' },
+    { label: 'إضاءة', value: 'إضاءة' },
+    { label: 'بورتريه', value: 'بورتريه' },
+    { label: 'مناظر طبيعية', value: 'مناظر طبيعية' },
+    { label: 'تقنيات', value: 'تقنيات' },
   ];
 
   bottomLinks: NavLink[] = [
