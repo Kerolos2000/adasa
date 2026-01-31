@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BLOG_DATA } from '../../../../core/data/posts.data';
@@ -6,8 +5,7 @@ import { SectionLabelComponent } from '../../../../shared/components/section-lab
 
 @Component({
   selector: 'app-latest-section',
-  standalone: true,
-  imports: [CommonModule, RouterLink, SectionLabelComponent],
+  imports: [RouterLink, SectionLabelComponent],
   templateUrl: './latest-section.component.html',
 })
 export class LatestSectionComponent {
