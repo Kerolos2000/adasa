@@ -13,7 +13,7 @@ export const routes: Routes = [
   },
   {
     path: 'blog',
-    loadComponent: () => import('./features/blog/blog.component').then((m) => m.BlogComponent),
+    loadComponent: () => import('./features/blog/page/blog.component').then((m) => m.BlogComponent),
     title: 'المدونة - عدسة',
   },
   {
