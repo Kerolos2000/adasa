@@ -1,56 +1,90 @@
 <article
-  class="group relative h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-2"
-  [class.flex]="viewMode === 'list'">
-  <a [routerLink]="['/blog', post.slug]" class="inline-flex flex-col w-full h-full" [class.flex]="viewMode === 'list'">
-    <div class="relative overflow-hidden" [class.h-250px]="viewMode === 'grid'" [class.w-full]="viewMode === 'grid'"
-      [class.md:w-72]="viewMode === 'list'" [class.h-48]="viewMode === 'list'">
-      <img [src]="post.image" [alt]="post.title"
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out">
-      <div
-        class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity">
-      </div>
+  class="group bg-main rounded-2xl border border-border hover:border-orange-500/30 transition-all duration-500 overflow-hidden"
+  [class.h-full]="viewMode === 'grid'" [class.hover:-translate-y-2]="viewMode === 'grid'"
+  [style.animation-delay]="(index * 100) + 'ms'">
+  <a [routerLink]="['/blog', post.slug]"
+    [class]="viewMode === 'grid' ? ' h-full inline-flex flex-col justify-between' : 'flex flex-col md:flex-row w-full h-full'">
 
-      <div class="absolute top-4 right-4">
+    <div class="relative overflow-hidden shrink-0" [class.w-full]="viewMode === 'grid'"
+      [class.h-52]="viewMode === 'grid' || viewMode === 'list'" [class.md:w-72]="viewMode === 'list'"
+      [class.lg:w-80]="viewMode === 'list'" [class.md:h-auto]="viewMode === 'list'">
+
+      <img [src]="post.image" [alt]="post.title"
+        class="w-full h-full object-cover transition-transform duration-700 ease-out"
+        [class.group-hover:scale-110]="viewMode === 'grid'" [class.group-hover:scale-105]="viewMode === 'list'">
+
+      @if (viewMode === 'grid') {
+      <div
+        class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      </div>
+      } @else {
+      <div
+        class="absolute inset-0 bg-linear-to-l from-main/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      </div>
+      }
+
+      <div class="absolute top-4 right-4" [class.hidden]="viewMode === 'list'">
         <span
-          class="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-bold rounded-full border border-white/10">
+          class="px-3 py-1 bg-black/80 backdrop-blur-sm text-white text-xs font-semibold rounded-full border border-white/10">
           {{ post.category }}
         </span>
       </div>
     </div>
 
     <div class="p-6 flex-1 flex flex-col justify-center">
-      <div class="flex items-center gap-3 text-sm text-neutral-500 mb-4">
-        <span class="flex items-center gap-1.5">
-          <i class="fa-regular fa-clock text-orange-500/70"></i>
-          {{ post.readTime }}
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        @if (viewMode === 'list') {
+        <span
+          class="px-3 py-1 bg-orange-500/10 text-orange-500 text-xs font-semibold rounded-full border border-orange-500/20">
+          {{ post.category }}
         </span>
-        <span class="w-1.5 h-1.5 bg-neutral-700 rounded-full"></span>
-        <span>{{ post.date }}</span>
+        }
+
+        <div class="flex items-center gap-3 text-sm text-neutral-500">
+          <span class="flex items-center gap-1.5">
+            <i class="fa-regular fa-clock"></i>
+            {{ post.readTime }}
+          </span>
+          <span class="w-1 h-1 bg-neutral-600 rounded-full" [class.hidden]="viewMode === 'list'"></span>
+          <span class="flex items-center gap-1.5">
+            @if (viewMode === 'list') { <i class="fa-regular fa-calendar"></i> }
+            {{ post.date }}
+          </span>
+        </div>
       </div>
 
       <h3
-        class="text-xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors duration-300 line-clamp-2 leading-snug">
+        class="font-bold text-white mb-3 group-hover:text-orange-500 transition-colors duration-300 line-clamp-2 leading-tight"
+        [class.text-xl]="viewMode === 'grid'" [class.lg:text-2xl]="viewMode === 'list'">
         {{ post.title }}
       </h3>
 
-      <p class="text-neutral-400 mb-6 line-clamp-2 text-sm leading-relaxed">
+      <p class="text-neutral-400 mb-5 line-clamp-2 text-sm leading-relaxed">
         {{ post.excerpt }}
       </p>
 
-      <div class="flex items-center justify-between pt-5 border-t border-border mt-auto">
+      <div class="flex items-center justify-between mt-auto pt-4 border-t border-border">
         <div class="flex items-center gap-3">
           <img [src]="post.author.avatar" [alt]="post.author.name"
-            class="w-10 h-10 rounded-full object-cover ring-2 ring-neutral-800 group-hover:ring-orange-500/30 transition-all">
+            class="w-9 h-9 rounded-full object-cover ring-2 ring-border group-hover:ring-orange-500/30 transition-all">
           <div>
-            <p class="text-sm font-bold text-white leading-none mb-1">{{ post.author.name }}</p>
+            <p class="text-sm font-medium text-white leading-none mb-1">{{ post.author.name }}</p>
             <p class="text-xs text-neutral-500">{{ post.author.role }}</p>
           </div>
         </div>
 
+        @if (viewMode === 'list') {
+        <span
+          class="hidden sm:inline-flex items-center gap-2 text-orange-500 font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+          اقرأ المقال
+          <i class="fa-solid fa-arrow-left"></i>
+        </span>
+        } @else {
         <div
-          class="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500 transition-all duration-300 border border-orange-500/20 group-hover:border-transparent">
-          <i class="fa-solid fa-arrow-left text-orange-500 group-hover:text-white transition-colors"></i>
+          class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300 border border-orange-500/20 group-hover:border-transparent">
+          <i class="fa-solid fa-arrow-left text-orange-500 group-hover:text-white transition-colors duration-300"></i>
         </div>
+        }
       </div>
     </div>
   </a>

@@ -1,22 +1,26 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
   <div class="mb-8 flex items-center justify-between gap-4">
 
-    <div class="flex-1 min-w-0">
-      <p class="text-neutral-400 text-sm md:text-base flex flex-wrap gap-1">
-        <span>عرض</span>
-        <span class="font-bold text-white">{{ filteredPosts.length }}</span>
-        <span>مقالات</span>
+    <div class="flex items-center">
+      <div
+        class="px-6 py-3 bg-card border border-border/50 rounded-2xl flex items-center gap-3 shadow-2xl shadow-black/40">
+        <span class="text-neutral-400 font-medium">عرض</span>
+        <span class="text-2xl font-black text-white leading-none">{{ filteredPosts.length }}</span>
+        <span class="text-neutral-400 font-medium">مقالات</span>
 
         @if (selectedCategory !== 'الكل') {
-        <span>في</span>
-        <span class="font-bold text-orange-500">{{ selectedCategory }}</span>
+        <div class="w-1 h-4 bg-border mx-1"></div>
+        <span class="text-orange-500 font-bold">{{ selectedCategory }} </span>
         }
-
         @if (searchQuery) {
-        <span>لـ</span>
-        <span class="font-bold text-white break-all line-clamp-1">"{{ searchQuery }}"</span>
+        <div class="hidden md:flex items-center">
+          <div class="w-1 h-4 bg-border mx-1"></div>
+          <span class="text-orange-500 font-bold break-all line-clamp-1">
+            بحث عن: {{ searchQuery }}
+          </span>
+        </div>
         }
-      </p>
+      </div>
     </div>
 
 
