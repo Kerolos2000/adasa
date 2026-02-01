@@ -40,7 +40,7 @@
   <div class="absolute top-full left-0 right-0 px-4 md:hidden overflow-hidden transition-all duration-300 ease-in-out"
     [class.max-h-96]="isMenuOpen" [class.opacity-100]="isMenuOpen" [class.max-h-0]="!isMenuOpen"
     [class.opacity-0]="!isMenuOpen">
-    <div class="rounded-2xl border border-border bg-main p-4 backdrop-blur-md flex flex-col space-y-1 mt-2">
+    <div class="rounded-2xl border border-border bg-main p-4 backdrop-blur-md flex flex-col space-y-1 mt-2 gap-2">
       @for (link of navLinks; track link.path) {
       <a [routerLink]="link.path" routerLinkActive="border border-orange-500/30 bg-orange-500/10 text-orange-500"
         (click)="isMenuOpen = false"

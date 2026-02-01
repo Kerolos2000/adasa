@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { BLOG_DATA } from '../../core/data/posts.data';
+import { Category } from '../../core/interfaces/post.interfaces';
 
 export interface SocialLink {
   icon: string;
@@ -10,11 +12,6 @@ export interface SocialLink {
 export interface NavLink {
   label: string;
   path: string;
-}
-
-export interface Category {
-  label: string;
-  value: string;
 }
 
 @Component({
@@ -37,12 +34,7 @@ export class FooterComponent {
     { label: 'من نحن', path: '/about' },
   ];
 
-  categories: Category[] = [
-    { label: 'إضاءة', value: 'إضاءة' },
-    { label: 'بورتريه', value: 'بورتريه' },
-    { label: 'مناظر طبيعية', value: 'مناظر طبيعية' },
-    { label: 'تقنيات', value: 'تقنيات' },
-  ];
+  categories: Category[] = BLOG_DATA.categories;
 
   bottomLinks: NavLink[] = [
     { label: 'سياسة الخصوصية', path: '/home' },

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Post } from '../../../../core/models/post.model';
+import { Post } from '../../../../core/interfaces/post.interfaces';
 
 @Component({
   selector: 'app-content-section',

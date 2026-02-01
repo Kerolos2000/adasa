@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BackgroundGridComponent } from '../../../../shared/components/background-grid/background-grid.component';
-import { SectionLabelComponent } from '../../../../shared/components/section-label/section-label.component';
+import { BackgroundGridComponent } from '../../../../components/background-grid/background-grid.component';
+import { SectionLabelComponent } from '../../../../components/section-label/section-label.component';
 
 @Component({
   selector: 'app-hero-section',

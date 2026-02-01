@@ -20,28 +20,11 @@ export interface Post {
 }
 
 export interface Category {
-  name: string;
-  count: number;
-  color: string;
-}
-
-export interface SocialLinks {
-  twitter: string;
-  github: string;
-  linkedin: string;
-  youtube: string;
-}
-
-export interface SiteInfo {
-  name: string;
-  tagline: string;
-  description: string;
-  email: string;
-  social: SocialLinks;
+  label: string;
+  value: string;
 }
 
 export interface BlogData {
   posts: Post[];
   categories: Category[];
-  siteInfo: SiteInfo;
 }

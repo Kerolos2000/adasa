@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { SectionLabelComponent } from '../../../../shared/components/section-label/section-label.component';
+import { SectionLabelComponent } from '../../../../components/section-label/section-label.component';
 
 interface Category {
   title: string;

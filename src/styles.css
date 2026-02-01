@@ -69,14 +69,14 @@ router-outlet {
   padding-block: 16px;
   background: linear-gradient(135deg, #f97316, #ea580c);
   border-radius: 50px;
-  transition: all 0.3s ease;
   font-weight: 500;
   text-decoration: none;
+  transition: all 2s ease;
 }
 .main-btn:hover {
   color: white;
   background: linear-gradient(135deg, #ea580c, #f97316);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .secondary-btn {

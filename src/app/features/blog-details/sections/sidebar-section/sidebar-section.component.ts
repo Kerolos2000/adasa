@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLinkWithHref } from '@angular/router';
-import { Post } from '../../../../core/models/post.model';
+import { Post } from '../../../../core/interfaces/post.interfaces';
 
 export interface Toc {
   id: string;

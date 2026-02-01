@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Post } from '../../../core/models/post.model';
+import { Post } from '../../core/interfaces/post.interfaces';
 
 export type ViewMode = 'grid' | 'list';
 

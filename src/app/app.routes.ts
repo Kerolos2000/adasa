@@ -31,11 +31,6 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'about',
-    loadComponent: () => import('./features/about/about.component').then((m) => m.AboutComponent),
-    title: 'عدسة - من نحن',
-  },
-  {
     path: '**',
     loadComponent: () =>
       import('./features/not-found/not-found.component').then((m) => m.NotFoundComponent),

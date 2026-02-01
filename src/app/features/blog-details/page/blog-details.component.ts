@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { BLOG_DATA } from '../../../core/data/posts.data';
-import { Post } from '../../../core/models/post.model';
+import { Post } from '../../../core/interfaces/post.interfaces';
 import { ContentSectionComponent } from '../sections/content-section/content-section.component';
 import { HeroSectionComponent } from '../sections/hero-section/hero-section.component';
 import { RelatedArticlesSectionComponent } from '../sections/related-articles-section/related-articles-section.component';

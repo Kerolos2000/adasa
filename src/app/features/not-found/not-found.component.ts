@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BackgroundGridComponent } from '../../shared/components/background-grid/background-grid.component';
+import { BackgroundGridComponent } from '../../components/background-grid/background-grid.component';
 
 @Component({
   selector: 'app-not-found',

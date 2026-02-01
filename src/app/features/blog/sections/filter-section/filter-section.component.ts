@@ -9,7 +9,7 @@ import { BLOG_DATA } from '../../../../core/data/posts.data';
   templateUrl: './filter-section.component.html',
 })
 export class FilterSectionComponent implements OnInit {
-  categories = ['الكل', ...BLOG_DATA.categories.map((c) => c.name)];
+  categories = ['الكل', ...BLOG_DATA.categories.map((c) => c.label)];
   selectedCategory = 'الكل';
   searchQuery = '';
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BlogPostCardComponent } from '../../../../components/blog-post-card/blog-post-card.component';
 import { BLOG_DATA } from '../../../../core/data/posts.data';
-import { Post } from '../../../../core/models/post.model';
-import { BlogPostCardComponent } from '../../../../shared/components/blog-post-card/blog-post-card.component';
+import { Post } from '../../../../core/interfaces/post.interfaces';
 
 @Component({
   selector: 'app-blog-list-section',

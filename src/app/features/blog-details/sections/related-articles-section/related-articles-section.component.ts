@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Post } from '../../../../core/models/post.model';
+import { Post } from '../../../../core/interfaces/post.interfaces';
 
 @Component({
   selector: 'app-related-articles-section',
