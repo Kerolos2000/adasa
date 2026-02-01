@@ -9,8 +9,8 @@
       </div>
       <nav class="space-y-2">
         @for (item of toc; track item.id) {
-        <a
-          class="flex items-center gap-3 p-3 rounded-xl text-neutral-400 hover:text-orange-500 hover:bg-orange-500/5 transition-all duration-300 group">
+        <a [routerLink]="['/blog', post.slug]" fragment="{{item.id}}" routerLinkActive="bg-card"
+          class="flex items-center gap-3 p-3 rounded-xl text-neutral-400 hover:text-orange-500 hover:bg-orange-500/5 transition-all duration-300 group cursor-pointer">
           <span
             class="flex items-center justify-center w-6 h-6 bg-hover rounded-lg text-xs font-bold text-neutral-500 group-hover:bg-orange-500/10 group-hover:text-orange-500 transition-colors">
             {{ $index + 1 }}
@@ -30,7 +30,7 @@
         </div>
         <div class="text-center p-4 bg-background rounded-xl">
           <i class="fa-regular fa-calendar text-orange-500 text-xl mb-2"></i>
-          <p class="text-white font-bold text-sm">{{ localizedDate() }}</p>
+          <p class="text-white font-bold text-sm">{{ post.date }}</p>
           <p class="text-neutral-500 text-xs">تاريخ النشر</p>
         </div>
       </div>
@@ -43,10 +43,10 @@
         </div>
         <h3 class="font-bold text-white mb-2">لا تفوّت جديدنا</h3>
         <p class="text-neutral-400 text-sm mb-4">اشترك للحصول على أحدث المقالات</p>
-        <button
-          class="block w-full py-3 bg-orange-500 text-white font-semibold rounded-xl hover:bg-orange-600 transition-colors text-center">
+        <a routerLink="/blog"
+          class="block w-full py-3 bg-orange-500 text-white font-semibold rounded-xl hover:bg-orange-600 text-center cursor-pointer transition-colors duration-300">
           تصفح المزيد
-        </button>
+        </a>
       </div>
     </div>
   </div>

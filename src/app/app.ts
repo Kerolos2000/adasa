@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -10,4 +11,8 @@ import { NavComponent } from './layout/nav/nav.component';
 })
 export class App {
   protected readonly title = signal('adasa');
+
+  constructor(private viewportScroller: ViewportScroller) {
+    this.viewportScroller.setOffset([0, 120]);
+  }
 }

@@ -1,18 +1,30 @@
-import { Component, Input } from '@angular/core';
-import { BLOG_DATA } from '../../../../core/data/posts.data';
+import { Component, Input, OnInit } from '@angular/core';
+import { RouterLinkWithHref } from '@angular/router';
 import { Post } from '../../../../core/models/post.model';
+
+export interface Toc {
+  id: string;
+  title: string;
+}
 
 @Component({
   selector: 'app-sidebar-section',
   templateUrl: './sidebar-section.component.html',
+  styleUrls: ['./sidebar-section.component.css'],
+  imports: [RouterLinkWithHref],
 })
-export class SidebarSectionComponent {
+export class SidebarSectionComponent implements OnInit {
   @Input() post!: Post;
-  toc: Post[] = BLOG_DATA.posts;
+  toc: Toc[] = [];
+  headerCount: number = 0;
 
-  localizedDate() {
-    if (!this.post?.date) return '';
-    const date = new Date(this.post.date);
-    return new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'long' }).format(date);
+  ngOnInit() {
+    this.toc = this.post.content
+      .split('\n\n')
+      .filter((block) => block.startsWith('## '))
+      .map((block) => ({
+        id: `section-${this.headerCount++}`,
+        title: block.replace('## ', ''),
+      }));
   }
 }

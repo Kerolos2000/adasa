@@ -3,23 +3,29 @@ import { BLOG_DATA } from '../../../core/data/posts.data';
 import { Post } from '../../../core/models/post.model';
 import { ContentSectionComponent } from '../sections/content-section/content-section.component';
 import { HeroSectionComponent } from '../sections/hero-section/hero-section.component';
+import { RelatedArticlesSectionComponent } from '../sections/related-articles-section/related-articles-section.component';
 import { SidebarSectionComponent } from '../sections/sidebar-section/sidebar-section.component';
 
 @Component({
   selector: 'app-blog-details',
   templateUrl: './blog-details.component.html',
-  imports: [HeroSectionComponent, ContentSectionComponent, SidebarSectionComponent],
+  imports: [
+    HeroSectionComponent,
+    ContentSectionComponent,
+    SidebarSectionComponent,
+    RelatedArticlesSectionComponent,
+  ],
 })
 export class BlogDetailsComponent {
   post!: Post;
   relatedPosts: Post[] = [];
 
-  @Input() slug!: string;
-
-  ngOnInit() {
-    this.post = BLOG_DATA.posts.find((p) => p.slug === this.slug)!;
+  @Input()
+  set slug(value: string) {
+    this.post = BLOG_DATA.posts.find((p) => p.slug === value)!;
     this.relatedPosts = BLOG_DATA.posts
-      .filter((p) => p.category === this.post?.category && p.slug !== this.post?.slug)
+      .filter((p) => p.id !== this.post.id)
+      .sort(() => Math.random() - 0.5)
       .slice(0, 3);
   }
 }

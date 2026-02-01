@@ -27,8 +27,4 @@ export class ContentSectionComponent implements OnChanges {
       });
     }
   }
-
-  copyLink() {
-    navigator.clipboard.writeText(window.location.href);
-  }
 }
