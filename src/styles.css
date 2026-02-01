@@ -32,6 +32,7 @@
     border-color: var(--border);
   }
 
+  html,
   body {
     background-color: var(--bg-deep);
     color: var(--foreground);
