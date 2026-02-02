@@ -26,13 +26,10 @@
 }
 
 @layer base {
-  *::before,
-  *::after,
   * {
     border-color: var(--border);
   }
 
-  html,
   body {
     background-color: var(--bg-deep);
     color: var(--foreground);
@@ -53,11 +50,6 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f97316;
-}
-
-/* Hide router-outlet element to prevent layout issues */
-router-outlet {
-  display: contents;
 }
 
 .main-btn {
