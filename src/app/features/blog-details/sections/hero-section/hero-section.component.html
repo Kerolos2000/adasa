@@ -1,32 +1,33 @@
-<div class="relative h-[60vh] overflow-hidden">
-  <img [src]="post.image" [alt]="post.title" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent">
-  </div>
+<div class="relative grid bg-cover bg-top" [style.background-image]="'url(' + post.image + ')'">
+  <div class="col-start-1 row-start-1 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent"></div>
 
-  <div class="absolute top-8 inset-x-8">
-    <nav
-      class="inline-flex items-center gap-2 px-4 py-2 bg-black/30 backdrop-blur-md rounded-full text-sm border border-white/10">
-      <a routerLink="/" class="text-white/70 hover:text-white transition-colors"><i class="fa-solid fa-home"></i></a>
-      <i class="fa-solid fa-chevron-left text-white/30 text-xs"></i>
-      <a routerLink="/blog" class="text-white/70 hover:text-white transition-colors">المدونة</a>
-      <i class="fa-solid fa-chevron-left text-white/30 text-xs"></i>
-      <span class="text-orange-400 font-medium truncate max-w-50">{{ post.category }}</span>
-    </nav>
-  </div>
+  <div class="col-start-1 row-start-1 flex flex-col justify-between p-8 md:p-12 sm:gap-12 gap-6">
+    <div>
+      <nav
+        class="inline-flex items-center gap-2 px-4 py-2 bg-black/30 backdrop-blur-md rounded-full text-sm border border-white/10">
+        <a routerLink="/" class="text-white/70 hover:text-white transition-colors"><i class="fa-solid fa-home"></i></a>
+        <i class="fa-solid fa-chevron-left text-white/30 text-xs"></i>
+        <a routerLink="/blog" class="text-white/70 hover:text-white transition-colors">المدونة</a>
+        <i class="fa-solid fa-chevron-left text-white/30 text-xs"></i>
+        <span class="text-orange-400 font-medium truncate max-w-50">{{ post.category }}</span>
+      </nav>
+    </div>
 
-  <div class="absolute bottom-0 inset-x-0 p-8 md:p-12">
-    <div class="max-w-5xl mx-auto">
+    <div class="sm:px-12">
       <div class="flex flex-wrap items-center gap-3 mb-6">
         <a [routerLink]="['/blog']" [queryParams]="{ category: post.category }"
-          class="px-4 py-2 bg-orange-500 text-white text-sm font-bold rounded-full hover:bg-orange-600 transition-colors">{{
-          post.category }}</a>
+          class="px-4 py-2 bg-orange-500 text-white text-sm font-bold rounded-full hover:bg-orange-600 transition-colors">
+          {{ post.category }}
+        </a>
+
         <div class="flex items-center gap-4 text-white/70 text-sm">
           <span class="flex items-center gap-2"><i class="fa-regular fa-calendar"></i>{{ post.date }}</span>
           <span class="flex items-center gap-2"><i class="fa-regular fa-clock"></i>{{ post.readTime }}</span>
         </div>
       </div>
 
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">{{ post.title }}
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
+        {{ post.title }}
       </h1>
 
       <div class="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 w-fit">

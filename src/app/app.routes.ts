@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './features/home/page/home.component';
 
 export const routes: Routes = [
   {
@@ -8,7 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadComponent: () => import('./features/home/page/home.component').then((m) => m.HomeComponent),
+    component: HomeComponent,
     title: 'عدسة - عالم التصوير',
   },
   {

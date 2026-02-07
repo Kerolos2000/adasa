@@ -1,5 +1,9 @@
 <app-hero-section />
 <app-selected-articles-section />
-<app-categories-section />
-<app-latest-section />
+<app-categories-section #categoriesSection />
+@defer (on viewport(categoriesSection); prefetch on idle) {
+<app-latest-section #latestSection />
+}
+@defer (on viewport(categoriesSection)) {
 <app-newsletter-section />
+}
